@@ -26,46 +26,51 @@ dependencies {
 ````java
 import com.xujiaao.android.things.driver.pca9685.Pca9685;
 
-// Create servo specifications:
-
-Pca9685.ServoSpec mServoSpec0 = new Pca9685.ServoSpec(0)
-        .setPulseDurationRange(1D, 2D)
-        .setAngleRange(0D, 180D);
-
-Pca9685.ServoSpec mServoSpec1 = new Pca9685.ServoSpec(1)
-        .setPulseDurationRange(1D, 2D)
-        .setAngleRange(0D, 180D);
-
-// Access the driver:
-
-Pca9685 mPca9685;
-
-try {
-    mPca9685 = new Pca9685(i2cBusName);
-} catch (IOException e) {
-    // couldn't configure the driver...
-}
-
-// Make the servos move:
-
-try {
-    mPca9685.setPwmSpec(mServoSpec0.setAngle(90D));
-    mPca9685.setPwmSpec(mServoSpec1.setAngle(90D));
-
-    // or
-
-    mServoSpec0.setAngle(90D).apply(mPca9685);
-    mServoSpec1.setAngle(90D).apply(mPca9685);
-} catch (IOException e) {
-    // error setting servos
-}
-
-// Close the driver when finished:
-
-try {
-    mPca9685.close();
-} catch (IOException e) {
-    // error closing driver
+class Foo {
+    
+    void bar() {
+        // Create servo specifications:
+        
+        Pca9685.ServoSpec mServoSpec0 = new Pca9685.ServoSpec(0)
+                .setPulseDurationRange(1D, 2D)
+                .setAngleRange(0D, 180D);
+        
+        Pca9685.ServoSpec mServoSpec1 = new Pca9685.ServoSpec(1)
+                .setPulseDurationRange(1D, 2D)
+                .setAngleRange(0D, 180D);
+        
+        // Access the driver:
+        
+        Pca9685 mPca9685;
+        
+        try {
+            mPca9685 = new Pca9685(i2cBusName);
+        } catch (IOException e) {
+            // couldn't configure the driver...
+        }
+        
+        // Make the servos move:
+        
+        try {
+            mPca9685.setPwmSpec(mServoSpec0.setAngle(90D));
+            mPca9685.setPwmSpec(mServoSpec1.setAngle(90D));
+        
+            // or
+        
+            mServoSpec0.setAngle(90D).apply(mPca9685);
+            mServoSpec1.setAngle(90D).apply(mPca9685);
+        } catch (IOException e) {
+            // error setting servos
+        }
+        
+        // Close the driver when finished:
+        
+        try {
+            mPca9685.close();
+        } catch (IOException e) {
+            // error closing driver
+        }
+    }
 }
 ````
 
