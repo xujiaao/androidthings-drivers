@@ -1,6 +1,6 @@
 # PCA9685 sample for Android Things
 
-This sample demonstrates how to control servos using PCA9685 (Adafruit 16-Channel 12-bit PWM/Servo Driver) with Android Things.
+This sample demonstrates how to control servos using [PCA9685](https://www.adafruit.com/product/815) with Android Things.
 
 
 ## Pre-requisites
