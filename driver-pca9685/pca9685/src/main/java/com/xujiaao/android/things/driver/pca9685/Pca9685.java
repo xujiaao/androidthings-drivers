@@ -297,7 +297,7 @@ public class Pca9685 implements AutoCloseable {
          * @param maxMs the maximum pulse duration in milliseconds
          * @throws IllegalArgumentException if minMs is not less than maxMs or if minMs < 0
          */
-        public ServoSpec setPulseDurationRange(double minMs, double maxMs) throws IOException {
+        public ServoSpec setPulseDurationRange(double minMs, double maxMs) {
             if (minMs >= maxMs) {
                 throw new IllegalArgumentException("MinMs must be less than maxMs");
             }
@@ -335,7 +335,7 @@ public class Pca9685 implements AutoCloseable {
          * @param maxAngle the maximum angle in degrees
          * @throws IllegalArgumentException if minAngle is not less than maxAngle
          */
-        public ServoSpec setAngleRange(double minAngle, double maxAngle) throws IOException {
+        public ServoSpec setAngleRange(double minAngle, double maxAngle) {
             if (minAngle >= maxAngle) {
                 throw new IllegalArgumentException("MinAngle must be less than maxAngle");
             }
@@ -366,7 +366,7 @@ public class Pca9685 implements AutoCloseable {
          * @param angle the angle position in degrees.
          */
         @SuppressWarnings("WeakerAccess")
-        public ServoSpec setAngle(double angle) throws IOException {
+        public ServoSpec setAngle(double angle) {
             if (angle < mMinAngle) {
                 mAngle = mMinAngle;
             } else if (angle > mMaxAngle) {
