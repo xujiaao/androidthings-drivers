@@ -4,7 +4,8 @@
 
 This driver supports [PCA9685](https://www.adafruit.com/product/815) (Adafruit 16-Channel 12-bit PWM/Servo Driver).
 
-![](https://cdn-shop.adafruit.com/1200x900/815-04.jpg | width=180)
+<img src="https://cdn-shop.adafruit.com/1200x900/815-04.jpg" width="540px" height="auto" />
+
 
 ## How to use the driver
 
