@@ -17,7 +17,21 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    api fileTree(dir: 'libs', include: ['*.jar'])
 
     compileOnly "com.google.android.things:androidthings:$android_things_version"
 }
+
+// ---------------------------------------------------------------------------------------------------------------------
+// Publishing
+// ---------------------------------------------------------------------------------------------------------------------
+
+ext.publicationConfig = rootProject.ext.publicationConfig + [
+        artifactGroup                : 'com.xujiaao.android.things',
+        artifactName                 : "driver-$name",
+        artifactVersion              : '0.1',
+        bintrayName                  : "driver-$project.name",
+        bintrayGithubReleaseNotesFile: "${rootProject.relativePath(project.projectDir)}/README.md",
+]
+
+apply from: rootProject.file('gradle/gradle-bintray-publish.gradle')
