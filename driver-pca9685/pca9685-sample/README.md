@@ -7,7 +7,7 @@ This sample demonstrates how to control servos using [PCA9685](https://www.adafr
 
 - Android Things compatible board
 
-- Android Studio 2.3+
+- Android Studio 3+
 
 - 1 [PCA9685](https://www.adafruit.com/product/815)
 
@@ -36,8 +36,3 @@ adb shell am start com.xujiaao.android.things.driver.sample/.Pca9685Activity
 ```
 
 If you have everything set up correctly, you will see the servos periodically update their position.
-
-
-
-
-
