@@ -1,0 +1,29 @@
+buildscript {
+    ext.kotlin_version = '1.2.21'
+    ext.android_things_version = '0.6-devpreview'
+
+    repositories {
+        google()
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.0.1'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+subprojects {
+    if (parent != rootProject) {
+        evaluationDependsOn(parent.path)
+    }
+
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
