@@ -36,3 +36,54 @@ subprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+task generateReadme {
+    doLast {
+        def readme = rootProject.file('README.md')
+        def content = new StringBuilder()
+        def skipping = false
+
+        readme.eachLine { line ->
+            if (skipping) {
+                skipping = line != '<!-- DRIVER_LIST_END -->'
+            }
+
+            if (!skipping) {
+                content.append(line).append('\n')
+
+                if (line == '<!-- DRIVER_LIST_START -->') {
+                    skipping = true
+
+                    content.append('Driver | Type | Usage (add to your gradle dependencies) | Note\n')
+                    content.append(':---:|:---:| --- | ---\n')
+
+                    rootProject.subprojects {
+                        if (project.ext.has('publicationConfig')) {
+                            def c = project.ext.publicationConfig
+                            content.append("[$c.artifactName](${rootProject.relativePath(project.projectDir)})")
+                            content.append(' | ')
+                            content.append(c.artifactType)
+                            content.append(' | ')
+                            content.append("`implementation '$c.artifactGroup:$c.artifactName:$c.artifactVersion'`")
+                            content.append(' | ')
+
+                            def sampleDir = file("$project.projectDir.absolutePath-sample")
+                            if (sampleDir.exists()) {
+                                content.append("[sample](${rootProject.relativePath(sampleDir)}) ")
+                            }
+
+                            def changelogFile = file("$project.projectDir.absolutePath/CHANGELOG.md")
+                            if (changelogFile.exists()) {
+                                content.append("[changelog](${rootProject.relativePath(changelogFile)}) ")
+                            }
+
+                            content.append('\n')
+                        }
+                    }
+                }
+            }
+        }
+
+        readme.text = content
+    }
+}

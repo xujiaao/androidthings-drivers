@@ -31,6 +31,7 @@ ext.publicationConfig = rootProject.ext.publicationConfig + [
         artifactGroup                : 'com.xujiaao.android.things',
         artifactName                 : "driver-$name",
         artifactVersion              : '0.1',
+        artifactType                 : 'Adafruit 16-Channel 12-bit PWM/Servo Driver', // Used for generating README.md
         bintrayName                  : "driver-$project.name",
         bintrayGithubReleaseNotesFile: "${rootProject.relativePath(project.projectDir)}/CHANGELOG.md",
 ]

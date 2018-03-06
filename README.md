@@ -26,7 +26,7 @@ dependencies {
 <!-- DRIVER_LIST_START -->
 Driver | Type | Usage (add to your gradle dependencies) | Note
 :---:|:---:| --- | ---
-[driver-pca9685](driver-pca9685/pca9685) | Adafruit 16-Channel 12-bit PWM/Servo Driver | `implementation 'com.xujiaao.android.things:driver-pca9685:0.1'` |  [sample](driver-pca9685/pca9685-sample) [changelog](driver-pca9685/pca9685/CHANGELOG.md)
+[driver-pca9685](driver-pca9685/pca9685) | Adafruit 16-Channel 12-bit PWM/Servo Driver | `implementation 'com.xujiaao.android.things:driver-pca9685:0.1'` | [sample](driver-pca9685/pca9685-sample) [changelog](driver-pca9685/pca9685/CHANGELOG.md) 
 <!-- DRIVER_LIST_END -->
 
 
