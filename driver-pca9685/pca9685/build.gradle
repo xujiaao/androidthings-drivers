@@ -31,7 +31,7 @@ ext.publicationConfig = rootProject.ext.publicationConfig + [
         artifactName                 : "driver-$name",
         artifactVersion              : '0.1',
         bintrayName                  : "driver-$project.name",
-        bintrayGithubReleaseNotesFile: "${rootProject.relativePath(project.projectDir)}/README.md",
+        bintrayGithubReleaseNotesFile: "${rootProject.relativePath(project.projectDir)}/CHANGELOG.md",
 ]
 
 apply from: rootProject.file('gradle/gradle-bintray-publish.gradle')
