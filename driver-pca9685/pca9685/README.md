@@ -1,6 +1,6 @@
 # PCA9685 driver for Android Things
 
-[![](https://img.shields.io/maven-metadata/v/http/jcenter.bintray.com/com/xujiaao/android/things/driver-pca9685/maven-metadata.xml.svg)](http://jcenter.bintray.com/com/xujiaao/android/things/driver-pca9685/maven-metadata.xml)
+[![Maven metadata URI](https://img.shields.io/maven-metadata/v/http/jcenter.bintray.com/com/xujiaao/android/things/driver-pca9685/maven-metadata.xml.svg)](http://jcenter.bintray.com/com/xujiaao/android/things/driver-pca9685/maven-metadata.xml)
 
 This driver supports [PCA9685](https://www.adafruit.com/product/815) (Adafruit 16-Channel 12-bit PWM/Servo Driver).
 
