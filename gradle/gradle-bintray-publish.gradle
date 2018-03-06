@@ -85,7 +85,6 @@ bintray {
         name = publicationConfig.bintrayName
         userOrg = publicationConfig.bintrayUserOrg ?: publicationConfig.bintrayUser
 
-
         if (publicationConfig.containsKey('bintrayLicenses')) {
             licenses = publicationConfig.bintrayLicenses
         }
