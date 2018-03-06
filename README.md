@@ -9,18 +9,12 @@ completeness or robustness.
 
 ## How to use a driver
 
-For your convenience, drivers in this repository are also published to JFrog Bintray<!-- JCenter --> as Maven artifacts. Look at their 
+For your convenience, drivers in this repository are also published to JCenter as Maven artifacts. Look at their 
 artifact and group ID in their build.gradle and add them as dependencies to your own project.
 
 For example, to use the `pca9685` driver, version `0.1`, simply add the line below to your project's `build.gradle`:
 
 ```
-repositories {
-    maven {
-        url 'https://bintray.com/xujiaao/android-things'
-    }
-}
-
 dependencies {
     implementation 'com.xujiaao.android.things:driver-pca9685:0.1'
 }
